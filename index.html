@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora Shopee</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<div class="container">
 
 <h1>Calculadora Shopee</h1>
 
@@ -15,10 +20,10 @@
 <h3>Configurações</h3>
 
 <label>Taxa imposto (%)</label>
-<input id="taxaImposto" type="number">
+<input id="taxaImposto" type="number" step="0.01">
 
 <label>Taxa fixa (R$)</label>
-<input id="taxaFixa" type="number">
+<input id="taxaFixa" type="number" step="0.01">
 
 <button onclick="salvarConfig()">Salvar taxas</button>
 
@@ -29,16 +34,20 @@
 <h3>Cálculo</h3>
 
 <label>Valor venda</label>
-<input id="valorVenda" type="number">
+<input id="valorVenda" type="number" step="0.01">
 
 <label>Custo produto</label>
-<input id="custoProduto" type="number">
+<input id="custoProduto" type="number" step="0.01">
 
 <button onclick="calcular()">Calcular</button>
+
+<button class="share" onclick="gerarLink()">Copiar link do cálculo</button>
 
 </div>
 
 <div id="resultado"></div>
+
+</div>
 
 <script src="script.js"></script>
 

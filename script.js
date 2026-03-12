@@ -28,6 +28,10 @@ function salvarConfig(){
     let taxa = parseFloat(document.getElementById("taxaImposto").value)
     let fixa = parseFloat(document.getElementById("taxaFixa").value)
 
+    if(!venda || !custo){
+    return
+    }
+
     let imposto = venda * (taxa/100)
 
     let lucro = venda - imposto - fixa - custo
@@ -45,10 +49,54 @@ function salvarConfig(){
     }else{
 
     resultado.innerHTML =
-    `<p class="prejuizo">Prejuízo: R$ ${lucro.toFixed(2)}</p>`
+    `<p class="prejuizo">Prejuízo: R$ ${lucro.toFixed(2)}</p>
+    <p class="prejuizo">Margem: ${percentual.toFixed(2)}%</p>`
 
     }
 
     }
 
-    carregarConfig() 
+    function gerarLink(){
+
+    let venda = document.getElementById("valorVenda").value
+    let custo = document.getElementById("custoProduto").value
+    let imposto = document.getElementById("taxaImposto").value
+    let taxa = document.getElementById("taxaFixa").value
+
+    let url = `${window.location.origin}${window.location.pathname}?venda=${venda}&custo=${custo}&imposto=${imposto}&taxa=${taxa}`
+
+    navigator.clipboard.writeText(url)
+
+    alert("Link copiado")
+
+    }
+
+    function carregarParametros(){
+
+    let params = new URLSearchParams(window.location.search)
+
+    if(params.get("venda")){
+    document.getElementById("valorVenda").value = params.get("venda")
+    }
+
+    if(params.get("custo")){
+    document.getElementById("custoProduto").value = params.get("custo")
+    }
+
+    if(params.get("imposto")){
+    document.getElementById("taxaImposto").value = params.get("imposto")
+    }
+
+    if(params.get("taxa")){
+    document.getElementById("taxaFixa").value = params.get("taxa")
+    }
+
+    if(params.get("venda")){
+    calcular()
+    }
+
+    }
+
+    carregarConfig()
+    carregarParametros()
+}
