@@ -1,0 +1,35 @@
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    text-align:center;
+    }
+
+    .box{
+    background:white;
+    padding:20px;
+    margin:20px auto;
+    width:300px;
+    border-radius:8px;
+    }
+
+    input{
+    width:90%;
+    padding:8px;
+    margin:5px;
+    }
+
+    button{
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+    }
+
+    .lucro{
+    color:green;
+    font-size:20px;
+    }
+
+    .prejuizo{
+    color:red;
+    font-size:20px;
+    }

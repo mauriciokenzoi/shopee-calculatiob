@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora Shopee</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Calculadora Shopee</h1>
+
+<div class="box">
+
+<h3>Configurações</h3>
+
+<label>Taxa imposto (%)</label>
+<input id="taxaImposto" type="number">
+
+<label>Taxa fixa (R$)</label>
+<input id="taxaFixa" type="number">
+
+<button onclick="salvarConfig()">Salvar taxas</button>
+
+</div>
+
+<div class="box">
+
+<h3>Cálculo</h3>
+
+<label>Valor venda</label>
+<input id="valorVenda" type="number">
+
+<label>Custo produto</label>
+<input id="custoProduto" type="number">
+
+<button onclick="calcular()">Calcular</button>
+
+</div>
+
+<div id="resultado"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
